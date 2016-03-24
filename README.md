@@ -7,7 +7,7 @@ This project is very simple demo to show you how to use Laravel Breadcrumbs quic
 
 ### Screenshots
 
-![](http://ww2.sinaimg.cn/large/a83e453cjw1f27pjuv9nbj21kw0r2jus.jpg)
+![](http://ww3.sinaimg.cn/large/76dc7f1bjw1f2825h2x6mj21kw0zbn05.jpg)
 
 ### Run the demo
 
