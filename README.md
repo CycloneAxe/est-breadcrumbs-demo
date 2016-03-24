@@ -15,7 +15,7 @@ You can refer to this [documentation](https://github.com/Aufree/laravel-packages
 
 1). To get started with Breadcrumbs, add to your `composer.json` file as a dependency:
 
-```
+```shell
 composer require davejamesmiller/laravel-breadcrumbs
 ```
 
@@ -23,7 +23,7 @@ composer require davejamesmiller/laravel-breadcrumbs
 
 Add the service provider to providers:
 
-```
+```php
 'providers' => [
     // ...
     DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
@@ -32,7 +32,7 @@ Add the service provider to providers:
 
 And add the facade to aliases:
 
-```
+```php
 'aliases' => [
     // ...
     'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
@@ -42,7 +42,7 @@ And add the facade to aliases:
 ### 2. Define your breadcrumbs
 Create a file called app/Http/breadcrumbs.php that looks like this:
 
-```
+```php
 <?php
 
 // Home
@@ -64,19 +64,19 @@ By default a Bootstrap-compatible ordered list will be rendered, so if you’re 
 
 First initialise the config file by running this command:
 
-```
+```shell
 $ php artisan vendor:publish
 ```
 
 Then open config/breadcrumbs.php and edit this line:
 
-```
+```php
 'view' => 'breadcrumbs::bootstrap3',
 ```
 
 The possible values are:
 
-```
+```php
 Bootstrap 3: breadcrumbs::bootstrap3
 Bootstrap 2: breadcrumbs::bootstrap2
 ```
@@ -84,7 +84,8 @@ Bootstrap 2: breadcrumbs::bootstrap2
 The path to a custom view: e.g. _partials/breadcrumbs
 
 ### 4. Basic Usage
-```
+
+```php
 {!! Breadcrumbs::render('blog'); !!}
 ```
 
