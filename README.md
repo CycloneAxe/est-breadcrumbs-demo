@@ -13,6 +13,15 @@ This project is very simple demo to show you how to use Laravel Breadcrumbs quic
 
 You can refer to this [documentation](https://github.com/Aufree/laravel-packages-top100/blob/master/how-to-run-a-laravel-project.md) to know how to run this demo.
 
+## The Tutorial
+
+### Table of contents
+
+1. Installation
+* Define your breadcrumbs
+* Choose a template
+* Basic Usage
+
 ### 1. Installation
 
 1). To get started with Breadcrumbs, add to your `composer.json` file as a dependency:
