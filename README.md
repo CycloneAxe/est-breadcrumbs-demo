@@ -3,6 +3,8 @@
 
 This project is very simple demo to show you how to use Laravel Breadcrumbs quickly.
 
+> This project was created by [The EST Group](http://est-group.org/) and [PHPHub](https://phphub.org/).
+
 ### Screenshots
 
 ![](http://ww2.sinaimg.cn/large/a83e453cjw1f27pjuv9nbj21kw0r2jus.jpg)
