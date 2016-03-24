@@ -3,7 +3,7 @@
 
 This project is very simple demo to show you how to use Laravel Breadcrumbs quickly.
 
-> This project was created by [The EST Group](http://est-group.org/) and [PHPHub](https://phphub.org/).
+> This project was created by [The EST Group](http://estgroupe.com/) and [PHPHub](https://phphub.org/).
 
 ### Screenshots
 
@@ -18,9 +18,9 @@ You can refer to this [documentation](https://github.com/Aufree/laravel-packages
 ### Table of contents
 
 1. Installation
-* Define your breadcrumbs
-* Choose a template
-* Basic Usage
+2. Define your breadcrumbs
+3. Choose a template
+4. Basic Usage
 
 ### 1. Installation
 
@@ -91,8 +91,6 @@ The possible values are:
 Bootstrap 3: breadcrumbs::bootstrap3
 Bootstrap 2: breadcrumbs::bootstrap2
 ```
-
-The path to a custom view: e.g. _partials/breadcrumbs
 
 ### 4. Basic Usage
 
