@@ -13,7 +13,7 @@ You can refer to this [documentation](https://github.com/Aufree/laravel-packages
 
 ### 1. Installation
 
-1). To get started with image, add to your `composer.json` file as a dependency:
+1). To get started with Breadcrumbs, add to your `composer.json` file as a dependency:
 
 ```
 composer require davejamesmiller/laravel-breadcrumbs
