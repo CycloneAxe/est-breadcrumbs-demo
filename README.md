@@ -1,47 +1,100 @@
-## 说明
-[davejamesmiller/laravel-breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs) 是为 Laravel 定制的具有 Bootstrap 风格的面包屑导航
+## Description
+[davejamesmiller/laravel-breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs) A simple Laravel-style way to create breadcrumbs in [Laravel 5](http://laravel.com/).
 
-> 本项目由 [The EST Group](http://est-group.org/) 团队整理发布, 首发地为 [PHPHub 社区](https://phphub.org/), 关于 PHPHub 社区往期的开源作品可 [在此](https://phphub.org/topics/1531) 查看.
+This project is very simple demo to show you how to use Laravel Breadcrumbs quickly.
 
-## 安装
-本项目使用 [Laravel](https://laravel.com/docs/5.2) ( [中文文档见此](http://laravel-china.org/docs/5.0) ), 本地开发环境使用 [Homestead](http://laravel-china.org/docs/5.0/homestead) 进行快速部署.
+### Screenshots
 
-下文将在默认读者已经安装好 `Homestead` 情况下进行说明.
+![](http://ww2.sinaimg.cn/large/a83e453cjw1f27pjuv9nbj21kw0r2jus.jpg)
 
-### 1. 克隆代码
-    git clone https://github.com/CycloneAxe/est-breadcrumbs-demo.git
+### Run the demo
 
-### 2. 配置本地的 homestead 环境
+You can refer to this [documentation](https://github.com/Aufree/laravel-packages-top100/blob/master/how-to-run-a-laravel-project.md) to know how to run this demo.
 
-编辑文件:
+### 1. Installation
 
-    homestead edit
+1). To get started with Breadcrumbs, add to your `composer.json` file as a dependency:
 
-对应加入修改:
+```shell
+composer require davejamesmiller/laravel-breadcrumbs
+```
 
-    folders:
-        - map: /Users/.../est-breadcrumbs-demo {你的本地项目地址}
-          to: /home/vagrant/est-breadcrumbs-demo
+2). Integration in Laravel
 
-    sites:
-        - map: breadcrumbs.app
-          to: /home/vagrant/est-breadcrumbs-demo/public
+Add the service provider to providers:
 
-应用修改:
+```php
+'providers' => [
+    // ...
+    DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+],
+```
 
-    homestead provision
+And add the facade to aliases:
 
-### 3. 安装依赖
+```php
+'aliases' => [
+    // ...
+    'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+],
+```
 
-    composer install
+### 2. Define your breadcrumbs
+Create a file called app/Http/breadcrumbs.php that looks like this:
 
-### 4. 生成配置文件
+```php
+<?php
 
-复制 `.env.example` 为 `.env`
+// Home
+Breadcrumbs::register('home', function($breadcrumbs)
+{
+    $breadcrumbs->push('Home', route('home'));
+});
 
+// Home > Blog
+Breadcrumbs::register('blog', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Blog', route('blog'));
+});
+```
 
-### 5. 修改 hosts
+### 3. Choose a template
+By default a Bootstrap-compatible ordered list will be rendered, so if you’re using Bootstrap 3 you can skip this step.
 
-    sudo echo '192.168.10.10 breadcrumbs.app' >> /etc/hosts
+First initialise the config file by running this command:
 
-配置完以后浏览器直接访问 http://breadcrumbs.app 即可
+```shell
+$ php artisan vendor:publish
+```
+
+Then open config/breadcrumbs.php and edit this line:
+
+```php
+'view' => 'breadcrumbs::bootstrap3',
+```
+
+The possible values are:
+
+```php
+Bootstrap 3: breadcrumbs::bootstrap3
+Bootstrap 2: breadcrumbs::bootstrap2
+```
+
+The path to a custom view: e.g. _partials/breadcrumbs
+
+### 4. Basic Usage
+
+```php
+{!! Breadcrumbs::render('blog'); !!}
+```
+
+That's it! :beers: :beers: :beers:
+
+You can refer to the [documentation](http://laravel-breadcrumbs.davejamesmiller.com/en/latest/start.html) to learn more about Laravel Breadcrumbs.
+
+---
+
+欢迎关注 `LaravelTips`, 这是一个专注于为 Laravel 开发者服务, 致力于帮助开发者更好的掌握 Laravel 框架, 提升开发效率的微信公众号.
+
+![](http://ww4.sinaimg.cn/large/76dc7f1bjw1f23moqj4qzj20by0bywfa.jpg)
