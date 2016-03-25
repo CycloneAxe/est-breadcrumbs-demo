@@ -89,20 +89,37 @@ Then open config/breadcrumbs.php and edit this line:
 
 The possible values are:
 
-```php
-Bootstrap 3: breadcrumbs::bootstrap3
-Bootstrap 2: breadcrumbs::bootstrap2
-```
+Bootstrap 3: `breadcrumbs::bootstrap3`
+
+Bootstrap 2: `breadcrumbs::bootstrap2`
 
 ### 4. Basic Usage
 
-Add this line to your views:
+1). Edit `app/HTTP/routes.php`, make sure each of your routes has a name ('as' parameter):
+
+```php
+Route::get('home', [
+   'as' => 'home',
+   function () {
+       return view('home');
+   }
+]);
+
+Route::get('blog', [
+   'as' => 'blog',
+   function () {
+       return view('home');
+   }
+]);
+```
+
+2). Add this line to your views:
 
 ```php
 {!! Breadcrumbs::render('blog'); !!}
 ```
 
-Then you'll get something like this:
+3). Then you'll get something like this:
 
 ![](http://ww1.sinaimg.cn/large/76dc7f1bjw1f2940y9j9rj20by04w745.jpg)
 
