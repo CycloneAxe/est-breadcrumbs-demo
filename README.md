@@ -1,3 +1,7 @@
+## For Chinese
+
+* [中文文档请点击这里](https://phphub.org/topics/1914)
+
 ## Description
 [davejamesmiller/laravel-breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs) A simple Laravel-style way to create breadcrumbs in [Laravel 5](http://laravel.com/).
 
