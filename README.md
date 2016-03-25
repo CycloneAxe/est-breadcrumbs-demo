@@ -1,7 +1,7 @@
 ## Description
 [davejamesmiller/laravel-breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs) A simple Laravel-style way to create breadcrumbs in [Laravel 5](http://laravel.com/).
 
-This project is very simple demo to show you how to use Laravel Breadcrumbs quickly.
+This project is a very simple demo to show you how to use Laravel Breadcrumbs quickly.
 
 > This project was created by [The EST Group](http://estgroupe.com/) and [PHPHub](https://phphub.org/).
 
@@ -51,7 +51,8 @@ And add the facade to aliases:
 ```
 
 ### 2. Define your breadcrumbs
-Create a file called app/Http/breadcrumbs.php that looks like this:
+
+Create a file called `app/Http/breadcrumbs.php` that looks like this:
 
 ```php
 <?php
@@ -71,6 +72,7 @@ Breadcrumbs::register('blog', function($breadcrumbs)
 ```
 
 ### 3. Choose a template
+
 By default a Bootstrap-compatible ordered list will be rendered, so if you’re using Bootstrap 3 you can skip this step.
 
 First initialise the config file by running this command:
@@ -94,9 +96,15 @@ Bootstrap 2: breadcrumbs::bootstrap2
 
 ### 4. Basic Usage
 
+Add this line to your views:
+
 ```php
 {!! Breadcrumbs::render('blog'); !!}
 ```
+
+Then you'll get something like this:
+
+![](http://ww1.sinaimg.cn/large/76dc7f1bjw1f2940y9j9rj20by04w745.jpg)
 
 That's it! :beers: :beers: :beers:
 
